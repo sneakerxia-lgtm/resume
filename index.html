@@ -13,7 +13,8 @@
     }
 
     body {
-      background: #f5f7fa;
+      background: #333333;
+      color: #000000;
       padding: 20px;
       max-width: 900px;
       margin: 0 auto;
@@ -34,6 +35,7 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: #000;
     }
 
     .tab-btn.active {
@@ -47,6 +49,7 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      color: #000;
     }
 
     .tab.active {
@@ -54,7 +57,7 @@
     }
 
     h1 {
-      color: #222;
+      color: #000;
       margin-bottom: 10px;
       font-size: 24px;
     }
@@ -62,6 +65,7 @@
     .base-info {
       margin-bottom: 20px;
       line-height: 1.7;
+      color: #000;
     }
 
     .section {
@@ -78,7 +82,7 @@
 
     .section p, .section li {
       line-height: 1.7;
-      color: #333;
+      color: #000;
     }
 
     .skills {
@@ -94,6 +98,11 @@
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 14px;
+    }
+
+    .work-experience {
+      line-height: 1.8;
+      margin-top: 10px;
     }
 
     /* 项目页面样式 */
@@ -114,6 +123,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: #000;
     }
 
     .project-btn:hover {
@@ -129,18 +139,14 @@
       margin-top: -5px;
       margin-bottom: 10px;
       line-height: 1.7;
+      color: #000;
     }
 
     .company {
       font-size: 13px;
-      color: #666;
+      color: #333;
       font-weight: normal;
     }
-
-body {
-  background-color: #333333; /* 深灰色 */
-  color: #FFFFFF;            /* 白色文字 */
-}
   </style>
 </head>
 
@@ -148,7 +154,7 @@ body {
 
   <div class="tab-buttons">
     <button class="tab-btn active" onclick="openTab(0)">个人信息</button>
-    <button class="tab-btn" onclick="openTab(1)">项目经验</button>
+    <button class="tab-btn" onclick="openTab(1)">项目与工作经验</button>
   </div>
 
   <!-- ====================== 第1页：个人信息 ====================== -->
@@ -157,6 +163,15 @@ body {
     <div class="base-info">
       电话：13693333847<br>
       邮箱：gxt1994@126.com<br>
+    </div>
+
+    <div class="section">
+      <h2>工作经历</h2>
+      <div class="work-experience">
+        <p><strong>宝马中国</strong> | 产品规划 / 项目管理 | 2022.01 – 至今</p>
+        <p><strong>汽车之家（北京）</strong> | 内容运营 | 2020.05 – 2022.01</p>
+        <p><strong>北京路咖网络科技</strong> | 编辑 | 2018.09 – 2020.03</p>
+      </div>
     </div>
 
     <div class="section">
@@ -183,15 +198,16 @@ body {
     </div>
   </div>
 
-  <!-- ====================== 第2页：项目经验 ====================== -->
+  <!-- ====================== 第2页：项目与工作经验 ====================== -->
   <div class="tab" id="tab2">
-    <h1>项目经验（汽车项目管理）</h1>
+    <h1>项目与工作经验</h1>
     <br>
 
+    <!-- 宝马项目 -->
     <div class="project-item">
       <button class="project-btn" onclick="toggleProject(this)">
         RVLC远程车辆日志回收项目
-        <span class="company">宝马中国 | 项目经理</span>
+        <span class="company">宝马中国 | 项目管理</span>
       </button>
       <div class="project-detail">
         负责RVLC项目全生命周期管理，从立项、范围定义、计划制定到交付上线完整落地；<br>
@@ -204,7 +220,7 @@ body {
     <div class="project-item">
       <button class="project-btn" onclick="toggleProject(this)">
         车机导航体验优化项目
-        <span class="company">宝马中国 | 项目负责人</span>
+        <span class="company">宝马中国 | 项目管理</span>
       </button>
       <div class="project-detail">
         针对导航使用率偏低，牵头导航功能优化项目，负责范围管理、计划排期、资源协调、进度管控；<br>
@@ -217,7 +233,7 @@ body {
     <div class="project-item">
       <button class="project-btn" onclick="toggleProject(this)">
         远程软件升级（RSU）体验优化项目
-        <span class="company">宝马中国 | 项目经理</span>
+        <span class="company">宝马中国 | 项目管理</span>
       </button>
       <div class="project-detail">
         主导RSU用户体验优化项目，通过需求调研、范围界定、计划制定、风险管控推动迭代落地；<br>
@@ -230,7 +246,7 @@ body {
     <div class="project-item">
       <button class="project-btn" onclick="toggleProject(this)">
         互联驾驶知识图谱产品项目
-        <span class="company">宝马中国 | 项目负责人</span>
+        <span class="company">宝马中国 | 项目管理</span>
       </button>
       <div class="project-detail">
         负责知识图谱从0到1项目管理：立项、范围定义、里程碑规划、多端（车机/App/网页）协同管控；<br>
@@ -242,12 +258,39 @@ body {
     <div class="project-item">
       <button class="project-btn" onclick="toggleProject(this)">
         Build Your BMW个性化社区产品项目
-        <span class="company">宝马中国 | 项目经理</span>
+        <span class="company">宝马中国 | 项目管理</span>
       </button>
       <div class="project-detail">
         负责社区产品POC阶段项目管理，明确项目目标、范围、里程碑与验收标准；<br>
         统筹1:1爱车模型、DreamCar改造等核心功能的需求落地、研发协同、版本管控；<br>
         推动Demo按期交付，上线后社区话题讨论量提升60%，用户粘性显著增强。
+      </div>
+    </div>
+
+    <!-- 汽车之家 -->
+    <div class="project-item">
+      <button class="project-btn" onclick="toggleProject(this)">
+        汽车之家 - 内容运营与产品迭代
+        <span class="company">汽车之家 | 内容运营</span>
+      </button>
+      <div class="project-detail">
+        对接上汽、奥迪等10+车企客户，规划30个智能上市及线索项目，累计金额1.89亿元；<br>
+        主导AGC智能写作1.0到3.0迭代，落地页线索转化率提升50%，新增有效线索8万+；<br>
+        负责海外AGC产品模板落地，推动德、英地区上线，海外线索量月均增长35%；<br>
+        每日监测CTR、CVR、完读率数据，每周输出优化报告，项目平均完读率达75%。
+      </div>
+    </div>
+
+    <!-- 路咖 -->
+    <div class="project-item">
+      <button class="project-btn" onclick="toggleProject(this)">
+        北京路咖 - 内容策划与编辑
+        <span class="company">北京路咖 | 编辑</span>
+      </button>
+      <div class="project-detail">
+        负责新能源、性能车垂直领域内容规划，内容平均阅读量高于整体水平50%；<br>
+        打造蔚来股价跟踪专栏，月度阅读破10万，成为行业标杆内容；<br>
+        推出特斯拉财报与商业模式解读内容，以简洁化呈现带动公众号涨粉3万+。
       </div>
     </div>
 
